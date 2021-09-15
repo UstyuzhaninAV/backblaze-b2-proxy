@@ -13,7 +13,8 @@ import (
 
 // b2_authorize_account
 // https://www.backblaze.com/b2/docs/b2_authorize_account.html
-func authAccount(idPrivate string, keyPrivate string) (loginToken string) {
+func authAccount(idPrivate string, keyPrivate string, apiUrl string) (loginToken string) {
+
 	url := fmt.Sprintf("%s/b2api/v2/b2_authorize_account", apiUrl)
 	timeout := 5 * time.Second
 	client := http.Client{Timeout: timeout}
@@ -52,7 +53,7 @@ func authAccount(idPrivate string, keyPrivate string) (loginToken string) {
 
 // b2_get_download_authorization
 // https://www.backblaze.com/b2/docs/b2_get_download_authorization.html
-func getAuthorization(loginAuthToken string, bucket string) (downloadToken string) {
+func getAuthorization(loginAuthToken string, bucket string, apiUrl string) (downloadToken string) {
 	url := fmt.Sprintf("%s/b2api/v2/b2_get_download_authorization", apiUrl)
 	timeout := 5 * time.Second
 	client := http.Client{Timeout: timeout}

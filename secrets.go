@@ -1,31 +1,14 @@
 package main
 
-var Global = "applicationID"
-func InitApp() (string) {
-        var Global= "applicationID"
-        return Global
-}
+import (
+    "log"
+    "github.com/joho/godotenv"
+)
 
-var Global = "applicationKey"
-func InitApp() (string) {
-        var Global= "applicationKey"
-        return Global
-}
-
-var Global = "bucketId"
-func InitApp() (string) {
-        var Global= "bucketId"
-        return Global
-}
-
-var Global = "nginxConfPath"
-func InitApp() (string) {
-        var Global= "nginxConfPath"
-        return Global
-}
-
-var Global = "apiUrl"
-func InitApp() (string) {
-        var Global= "apiUrl"
-        return Global
+// init is invoked before main()
+func init() {
+    // loads values from .env into the system
+    if err := godotenv.Load(); err != nil {
+        log.Print("No .env file found")
+    }
 }
