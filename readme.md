@@ -12,8 +12,8 @@ prereqs:
 setup:
 
 1. copy b2.conf to your nginx vhosts folder
-2. copy secrets.go.dist to secrets.go and fill in your b2 info + nginx b2.conf vhost path
-3. compile + setup executable on cronjob to run every 5-6 days. key will expire after 1 week
+2. copy .env.example to .env and fill in your b2 info + nginx b2.conf vhost path
+3. setup executable on cronjob to run every 5-6 days. key will expire after 1 week
 
 in b2.conf, you will need to update some things:
 
