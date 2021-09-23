@@ -1,4 +1,4 @@
 .idea
 secrets.go.bak
 .env
-backblaze-b2-proxys
+backblaze-b2-proxy
